@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUEFIT | Premium Streetwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-brand { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+        .font-arabic { font-family: 'Cairo', sans-serif; }
+        body { background-color: #0a0a0a; color: #ffffff; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-arabic antialiased text-sm">
+
+    <!-- شريط التنقل -->
+    <nav class="flex justify-between items-center px-6 py-4 border-b border-gray-800 bg-black sticky top-0 z-50">
+        <div>
+            <div class="text-3xl font-brand tracking-widest text-white">TRUEFIT</div>
+            <p class="text-[11px] text-gray-400 tracking-wide">إطلالة الشتاء تبدأ من هنا.. الرقي الذي يليق بحضورك!</p>
+        </div>
+        <div class="text-[10px] text-gray-500 uppercase tracking-widest border border-gray-800 px-2.5 py-1 rounded-full">Winter Drop</div>
+    </nav>
+
+    <!-- مساحة عرض المنتجات -->
+    <main class="max-w-6xl mx-auto mt-6 px-4 pb-12">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-brand tracking-wider text-white">LATEST EXCLUSIVE COLLECTION</h2>
+            <p class="text-xs text-gray-400 mt-1">تشكيلة الشتاء الحصرية - كميات محدودة</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- ================= 1. هاف سوسته قطيفة ================= -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
+                <div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
+                        <img id="main-preview-1" src="https://i.postimg.cc/bwGq5Fr2/IMG-20260927-WA0238.jpg" alt="هاف سوسته قطيفة" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
+                        <img onclick="changeImage(1, 'https://i.postimg.cc/bwGq5Fr2/IMG-20260927-WA0238.jpg', 'بني')" src="https://i.postimg.cc/bwGq5Fr2/IMG-20260927-WA0238.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(1, 'https://i.postimg.cc/sX3d3njc/IMG-20260927-WA0235.jpg', 'زيتي/رمادي')" src="https://i.postimg.cc/sX3d3njc/IMG-20260927-WA0235.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(1, 'https://i.postimg.cc/TwTMTkdc/IMG-20260927-WA0242.jpg', 'أسود')" src="https://i.postimg.cc/TwTMTkdc/IMG-20260927-WA0242.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">الفخامة الحقيقية لا تحتاج لصخب؛ هاف سوسته مستورد بتصميم قطيفة استثنائي.</h3>
+                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        • <strong class="text-gray-300">الخامة:</strong> قطيفة مستوردة مبطنة.<br>
+                        • <strong class="text-gray-300">التصميم:</strong> نصف سوستة عصري.<br>
+                        • <strong class="text-gray-300">القَصّة:</strong> Oversized مريح.
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-1" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="بني">بني (Brown)</option>
+                            <option value="زيتي/رمادي">زيتي / رمادي (Olive/Grey)</option>
+                            <option value="أسود">أسود (Black)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-1" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">X-Large (XL)</option>
+                            <option value="XXL">XX-Large (XXL)</option>
+                        </select>
+                    </div>
+                    <!-- زر الطلب -->
+                    <button type="button" onclick="orderProduct(1)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب عبر واتساب (550 جنيه)
+                    </button>
+                </div>
+            </div>
+
+            <!-- ================= 2. هودي ماسترميند ================= -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
+                <div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
+                        <img id="main-preview-2" src="https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg" alt="هودي ماسترميند" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
+                        <img onclick="changeImage(2, 'https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg', 'أسود')" src="https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(2, 'https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg', 'أبيض')" src="https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي ماسترميند الفاخر بسحاب كامل – إصدار TRUEFIT الحصري</h3>
+                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 850</div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        • <strong class="text-gray-300">التصميم:</strong> رمز Mastermind مع تفاصيل مطبوعة.<br>
+                        • <strong class="text-gray-300">الخامة:</strong> نسيج قطني ثقيل للشتاء.<br>
+                        • <strong class="text-gray-300">القَصّة:</strong> Tailored Fit متقنة.
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-2" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="أسود">أسود (Black)</option>
+                            <option value="أبيض">أبيض (White)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-2" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">X-Large (XL)</option>
+                            <option value="XXL">XX-Large (XXL)</option>
+                        </select>
+                    </div>
+                    <!-- زر الطلب -->
+                    <button type="button" onclick="orderProduct(2)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب عبر واتساب (850 جنيه)
+                    </button>
+                </div>
+            </div>
+
+            <!-- ================= 3. الجاكيت الشتوي المبطن ================= -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
+                <div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
+                        <img id="main-preview-3" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" alt="الجاكيت الشتوي المبطن" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
+                        <img onclick="changeImage(3, 'https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg', 'الزيتي الفاخر')" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(3, 'https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg', 'الكحلي الملكي')" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(3, 'https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg', 'الأسود الفاحم')" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(3, 'https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg', 'الرمادي العصري')" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">جاكيت شتوي مبطن بتصميم رياضي راقي – إصدار TRUEFIT الحصري</h3>
+                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 950</div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        • <strong class="text-gray-300">التصميم:</strong> هودد متصل مع خطوط جانبية.<br>
+                        • <strong class="text-gray-300">الدفء:</strong> حشو داخلي عالي الجودة.<br>
+                        • <strong class="text-gray-300">المميزات:</strong> خفيف الوزن، سحابات متينة.
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-3" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="الزيتي الفاخر">الزيتي الفاخر (Olive)</option>
+                            <option value="الكحلي الملكي">الكحلي الملكي (Navy)</option>
+                            <option value="الأسود الفاحم">الأسود الفاحم (Black)</option>
+                            <option value="الرمادي العصري">الرمادي العصري (Grey)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-3" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">X-Large (XL)</option>
+                            <option value="XXL">XX-Large (XXL)</option>
+                        </select>
+                    </div>
+                    <!-- زر الطلب -->
+                    <button type="button" onclick="orderProduct(3)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب عبر واتساب (950 جنيه)
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const waNumber = "201033741024";
+
+        function changeImage(productId, imgUrl, colorName) {
+            document.getElementById(`main-preview-${productId}`).src = imgUrl;
+            document.getElementById(`color-${productId}`).value = colorName;
+        }
+
+        function orderProduct(productId) {
+            const size = document.getElementById(`size-${productId}`).value;
+            const color = document.getElementById(`color-${productId}`).value;
+
+            if (!size) {
+                alert("عذراً، يجب اختيار المقاس أولاً لإتمام الطلب!");
+                return;
+            }
+
+            let productName = "";
+            let productPrice = "";
+
+            if (productId === 1) {
+                productName = "هاف سوسته قطيفة مستورد";
+                productPrice = "550 جنيه";
+            } else if (productId === 2) {
+                productName = "هودي ماسترميند الفاخر بسحاب كامل";
+                productPrice = "850 جنيه";
+            } else if (productId === 3) {
+                productName = "جاكيت شتوي مبطن بتصميم رياضي راقي";
+                productPrice = "950 جنيه";
+            }
+
+            const msg = `أهلاً TRUEFIT، 🦅\n\nأريد طلب القطعة التالية:\n- المنتج: ${productName}\n- اللون: ${color}\n- المقاس: ${size}\n- السعر: ${productPrice}\n\nجاهز لاستلام الأوردر ودفع عند الاستلام.`;
+            const encodedMsg = encodeURIComponent(msg);
+            
+            // التعديل السحري هنا: النقل المباشر في نفس الصفحة بدون نوافذ منبثقة
+            window.location.href = `https://wa.me/${waNumber}?text=${encodedMsg}`;
+        }
+    </script>
+</body>
+</html>
