@@ -14,7 +14,6 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .tab-btn.active { border-bottom: 2px solid #ffffff; color: #ffffff; font-weight: 700; }
         
-        /* حركة الشريط المتحرك */
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -27,7 +26,7 @@
 </head>
 <body class="font-arabic antialiased text-sm">
 
-    <!-- ================= شريط الإعلانات المتحرك العلوي ================= -->
+    <!-- شريط الإعلانات المتحرك العلوي -->
     <div class="bg-zinc-900 border-b border-zinc-800 text-zinc-300 text-xs py-2 overflow-hidden whitespace-nowrap">
         <div class="animate-marquee flex gap-12 font-medium tracking-wide">
             <span>🔥 خصم 25% على كل القطع الصيفية والأوتفيتات لفترة محدودة</span>
@@ -40,7 +39,7 @@
 
     <!-- شريط التنقل العلوي -->
     <nav class="border-b border-gray-800 bg-black sticky top-0 z-50">
-        <div class="flex justify-between items-center px-6 py-4">
+        <div class="flex justify-between items-center px-6 py-4 cursor-pointer" onclick="showHome()">
             <div>
                 <div class="text-3xl font-brand tracking-widest text-white">TRUEFIT</div>
                 <p class="text-[11px] text-gray-400 tracking-wide">إطلالتك تبدأ من هنا.. الرقي الذي يليق بحضورك!</p>
@@ -48,25 +47,122 @@
             <div class="text-[10px] text-gray-500 uppercase tracking-widest border border-gray-800 px-2.5 py-1 rounded-full">Official Store</div>
         </div>
 
-        <!-- شريط الأقسام (Categories Tabs) -->
-        <div class="flex justify-center gap-8 px-4 overflow-x-auto no-scrollbar border-t border-gray-900 bg-black/80">
-            <button onclick="filterCategory('winter', this)" class="tab-btn active py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap cursor-pointer">الشتوي</button>
-            <button onclick="filterCategory('outfit', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap cursor-pointer">أوتفيت كامل</button>
-            <button onclick="filterCategory('summer', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap cursor-pointer">الصيفي</button>
-            <button onclick="filterCategory('accessories', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap cursor-pointer">الاكسسوارات</button>
+        <!-- شريط الأقسام (يظهر فقط داخل المنتجات) -->
+        <div id="top-tabs" class="hidden justify-center gap-6 px-4 overflow-x-auto no-scrollbar border-t border-gray-900 bg-black/80">
+            <button onclick="filterCategory('offers', this)" class="tab-btn py-3 text-xs text-red-400 hover:text-red-300 transition whitespace-nowrap">أقوى العروض 🔥</button>
+            <button onclick="filterCategory('winter', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap">الشتوي</button>
+            <button onclick="filterCategory('outfit', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap">أوتفيت كامل</button>
+            <button onclick="filterCategory('summer', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap">الصيفي</button>
+            <button onclick="filterCategory('accessories', this)" class="tab-btn py-3 text-xs text-gray-300 hover:text-white transition whitespace-nowrap">الاكسسوارات</button>
         </div>
     </nav>
 
-    <!-- مساحة عرض المنتجات -->
-    <main class="max-w-6xl mx-auto mt-6 px-4 pb-12">
+    <!-- ================= واجهة الأقسام الرئيسية (Visual Categories) ================= -->
+    <main id="categories-view" class="max-w-6xl mx-auto mt-8 px-4 pb-12">
+        <h2 class="text-2xl font-bold text-center mb-8 tracking-wide">الأقسام</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- قسم أقوى العروض -->
+            <div onclick="openCategory('offers')" class="cursor-pointer group">
+                <img src="https://i.postimg.cc/0yf0z6Q7/Screenshot-20260929-092042.png" class="w-full h-48 md:h-64 object-cover rounded-2xl mb-3 border border-gray-800 group-hover:border-red-500 transition">
+                <div class="flex justify-between items-center px-1">
+                    <span class="font-bold text-red-500 text-base">أقوى العروض 🔥</span>
+                    <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+            </div>
+
+            <!-- قسم الشتوي -->
+            <div onclick="openCategory('winter')" class="cursor-pointer group">
+                <img src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl mb-3 border border-gray-800 group-hover:border-white transition">
+                <div class="flex justify-between items-center px-1">
+                    <span class="font-bold text-white text-base">تشكيلة الشتاء</span>
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+            </div>
+
+            <!-- قسم الأوتفيت -->
+            <div onclick="openCategory('outfit')" class="cursor-pointer group">
+                <img src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" class="w-full h-48 md:h-64 object-cover rounded-2xl mb-3 border border-gray-800 group-hover:border-white transition">
+                <div class="flex justify-between items-center px-1">
+                    <span class="font-bold text-white text-base">أوتفيت كامل</span>
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+            </div>
+
+            <!-- قسم الاكسسوارات -->
+            <div onclick="openCategory('accessories')" class="cursor-pointer group">
+                <img src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-full h-48 md:h-64 object-cover rounded-2xl mb-3 border border-gray-800 group-hover:border-white transition">
+                <div class="flex justify-between items-center px-1">
+                    <span class="font-bold text-white text-base">الاكسسوارات</span>
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+            </div>
+
+            <!-- قسم الصيفي -->
+            <div onclick="openCategory('summer')" class="cursor-pointer group">
+                <div class="w-full h-48 md:h-64 bg-zinc-900 flex items-center justify-center rounded-2xl mb-3 border border-gray-800 group-hover:border-white transition">
+                    <span class="font-brand text-3xl text-gray-700">SUMMER</span>
+                </div>
+                <div class="flex justify-between items-center px-1">
+                    <span class="font-bold text-white text-base">التشكيلة الصيفية</span>
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= مساحة عرض المنتجات (تظهر عند اختيار قسم) ================= -->
+    <main id="products-view" class="hidden max-w-6xl mx-auto mt-6 px-4 pb-12">
+        
+        <!-- زر الرجوع -->
+        <button onclick="showHome()" class="flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span>العودة للأقسام</span>
+        </button>
+
         <div class="text-center mb-8">
-            <h2 id="category-title" class="text-2xl font-brand tracking-wider text-white">WINTER COLLECTION</h2>
-            <p id="category-desc" class="text-xs text-gray-400 mt-1">تشكيلة الشتاء الفاخرة - متوفرة الآن</p>
+            <h2 id="category-title" class="text-2xl font-brand tracking-wider text-white">COLLECTION</h2>
+            <p id="category-desc" class="text-xs text-gray-400 mt-1">اكتشف أحدث الموديلات</p>
         </div>
 
         <!-- حاوية المنتجات -->
         <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
+            <!-- مثال لمنتج في قسم أقوى العروض (offers) -->
+            <div class="product-card offers bg-gray-900 border border-red-900/50 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
+                <div>
+                    <div class="absolute bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-br-lg z-10">عرض خاص 🔥</div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black relative">
+                        <img id="main-preview-0" src="https://i.postimg.cc/bwGq5Fr2/IMG-20260927-WA0238.jpg" alt="عرض خاص" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">هاف سوسته قطيفة - عرض حصري لفترة محدودة</h3>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-xl font-brand text-red-500 tracking-wide">EGP 399</span>
+                        <span class="text-xs text-gray-500 line-through">550 EGP</span>
+                    </div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        فرصة لا تعوض.. خامة قطيفة مستوردة بسعر الجملة!
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-0" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="بني">بني (Brown)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-0" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="orderProduct('عرض الهاف سوسته', '399 جنيه', 0)" class="w-full bg-red-600 text-white font-bold py-3 rounded text-xs hover:bg-red-700 transition shadow cursor-pointer">
+                        اطلب العرض الآن (399 جنيه)
+                    </button>
+                </div>
+            </div>
+
             <!-- ================= منتجات الشتوي (winter) ================= -->
             
             <!-- 1. هاف سوسته قطيفة -->
@@ -82,9 +178,6 @@
                     </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">هاف سوسته مستورد بتصميم قطيفة استثنائي.</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • الخامة: قطيفة مستوردة مبطنة.<br>• التصميم: نصف سوستة عصري.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
@@ -121,9 +214,6 @@
                     </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي "TRUEFIT" العصري بطبعة الشارع الفاخرة</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 850</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: طبعة فاخرة على الصدر والخلف.<br>• الخامة: نسيج قطني ثقيل.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
@@ -148,44 +238,7 @@
                 </div>
             </div>
 
-            <!-- 3. هودي ماسترميند -->
-            <div class="product-card winter bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
-                <div>
-                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
-                        <img id="main-preview-3" src="https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg" alt="هودي ماسترميند" class="w-full h-72 object-cover transition duration-300">
-                    </div>
-                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
-                        <img onclick="changeImage(3, 'https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg', 'أسود')" src="https://i.postimg.cc/RVjy6znx/FB-IMG-1790604410501.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
-                    </div>
-                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي ماسترميند الفاخر بسحاب كامل</h3>
-                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 850</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: رمز Mastermind مع تفاصيل مطبوعة.<br>• الخامة: نسيج قطني ثقيل للشتاء.
-                    </div>
-                </div>
-                <div>
-                    <div class="mb-3">
-                        <select id="color-3" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="أسود">أسود (Black)</option>
-                            <option value="أبيض">أبيض (White)</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <select id="size-3" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="" disabled selected>اختر المقاس</option>
-                            <option value="M">Medium (M)</option>
-                            <option value="L">Large (L)</option>
-                            <option value="XL">X-Large (XL)</option>
-                            <option value="XXL">XX-Large (XXL)</option>
-                        </select>
-                    </div>
-                    <button type="button" onclick="orderProduct('هودي ماسترميند الفاخر', '850 جنيه', 3)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
-                        اطلب عبر واتساب (850 جنيه)
-                    </button>
-                </div>
-            </div>
-
-            <!-- 4. كنزة TRUEFIT الوبرية -->
+            <!-- 3. كنزة TRUEFIT الوبرية -->
             <div class="product-card winter bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
@@ -197,9 +250,6 @@
                     </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">كنزة "TRUEFIT" الوبرية الفاخرة</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 750</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • الخامة: نسيج وبري فاخر فائق النعومة.<br>• التصميم: Minimalist أنيق.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
@@ -222,45 +272,7 @@
                 </div>
             </div>
 
-            <!-- 5. الجاكيت الشتوي المبطن -->
-            <div class="product-card winter bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
-                <div>
-                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
-                        <img id="main-preview-5" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" alt="جاكيت شتوي" class="w-full h-72 object-cover transition duration-300">
-                    </div>
-                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
-                        <img onclick="changeImage(5, 'https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg', 'الزيتي الفاخر')" src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
-                    </div>
-                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">جاكيت شتوي مبطن بتصميم رياضي راقي</h3>
-                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 950</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: هودد متصل مع خطوط جانبية.<br>• الدفء: حشو داخلي عالي الجودة.
-                    </div>
-                </div>
-                <div>
-                    <div class="mb-3">
-                        <select id="color-5" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="الزيتي الفاخر">الزيتي الفاخر (Olive)</option>
-                            <option value="الكحلي الملكي">الكحلي الملكي (Navy)</option>
-                            <option value="الأسود الفاحم">الأسود الفاحم (Black)</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <select id="size-5" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="" disabled selected>اختر المقاس</option>
-                            <option value="M">Medium (M)</option>
-                            <option value="L">Large (L)</option>
-                            <option value="XL">X-Large (XL)</option>
-                            <option value="XXL">XX-Large (XXL)</option>
-                        </select>
-                    </div>
-                    <button type="button" onclick="orderProduct('جاكيت شتوي مبطن', '950 جنيه', 5)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
-                        اطلب عبر واتساب (950 جنيه)
-                    </button>
-                </div>
-            </div>
-
-            <!-- 6. هودي New York بسحاب -->
+            <!-- 4. هودي New York بسحاب -->
             <div class="product-card winter bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
@@ -272,9 +284,6 @@
                     </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي "TRUEFIT" بسحاب وطبعة نيويورك الفاخرة</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 999</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: طبعة NEW YORK مع سحاب أمامي.<br>• الخامة: نسيج ثقيل ودافئ.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
@@ -299,33 +308,22 @@
             </div>
 
             <!-- ================= منتجات أوتفيت كامل (outfit) ================= -->
-
-            <!-- 7. الأوتفيت المتكامل (تيشيرت + بنطلون ترنينج + كاب) - الجديد -->
             <div class="product-card outfit bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
                         <img id="main-preview-7" src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" alt="أوتفيت TRUEFIT المتكامل" class="w-full h-72 object-cover transition duration-300">
                     </div>
-                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
-                        <img onclick="changeImage(7, 'https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg', 'البنفسجي الداكن مع الرمادي والأسود')" src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
-                    </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">أوتفيت "TRUEFIT" المتكامل (تيشيرت برنت + بنطلون ترنينج + كاب)</h3>
-                    
-                    <!-- عرض السعر الفخم مع الخصم -->
                     <div class="flex items-center gap-3 mb-3">
                         <span class="text-xl font-brand text-white tracking-wide">EGP 1387.5</span>
                         <span class="text-xs text-gray-500 line-through">1850 EGP</span>
                         <span class="bg-red-600/20 text-red-400 text-[10px] font-bold px-2 py-0.5 rounded border border-red-600/30">خصم 25%</span>
                     </div>
-
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • المكونات: تيشيرت برنت فخم + بنطلون ترنينج مريح + كاب أنيق.<br>• الخامة: أقمشة فائقة النعومة ومصممة لحرية الحركة.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
                         <select id="color-7" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="البنفسجي الداكن مع الرمادي والأسود">البنفسجي الداكن (تيشيرت) + الرمادي (ترنينج) + الأسود (كاب)</option>
+                            <option value="البنفسجي الداكن مع الرمادي والأسود">البنفسجي (تيشيرت) + رمادي (ترنينج) + أسود (كاب)</option>
                         </select>
                     </div>
                     <div class="mb-4">
@@ -337,15 +335,13 @@
                             <option value="XXL">XX-Large (XXL)</option>
                         </select>
                     </div>
-                    <button type="button" onclick="orderProduct('أوتفيت TRUEFIT المتكامل', '1387.5 جنيه (بعد خصم 25%)', 7)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
-                        اطلب الأوتفيت عبر واتساب (1387.5 جنيه)
+                    <button type="button" onclick="orderProduct('أوتفيت TRUEFIT المتكامل', '1387.5 جنيه', 7)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب الأوتفيت عبر واتساب
                     </button>
                 </div>
             </div>
 
             <!-- ================= منتجات الاكسسوارات (accessories) ================= -->
-
-            <!-- 8. كاب Boston العصري -->
             <div class="product-card accessories bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
@@ -357,9 +353,6 @@
                     </div>
                     <h3 class="text-sm font-bold text-white mb-2 leading-snug">كاب "TRUEFIT" بتصميم بوسطن العصري</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
-                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: تطريز BOSTON بتصميم ممزق (Distressed).<br>• الخامة: متينة وعالية الجودة.
-                    </div>
                 </div>
                 <div>
                     <div class="mb-3">
@@ -397,9 +390,48 @@
             document.getElementById(`color-${productId}`).value = colorName;
         }
 
+        function showHome() {
+            document.getElementById('categories-view').classList.remove('hidden');
+            document.getElementById('products-view').classList.add('hidden');
+            document.getElementById('top-tabs').classList.add('hidden');
+            document.getElementById('top-tabs').classList.remove('flex');
+        }
+
+        function openCategory(category) {
+            document.getElementById('categories-view').classList.add('hidden');
+            document.getElementById('products-view').classList.remove('hidden');
+            document.getElementById('top-tabs').classList.remove('hidden');
+            document.getElementById('top-tabs').classList.add('flex');
+            
+            // تفعيل الزر المناسب في الشريط العلوي
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(category)) {
+                    filterCategory(category, btn);
+                }
+            });
+        }
+
         function filterCategory(category, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active', 'border-white', 'border-red-500');
+                if (b.innerText.includes('العروض')) {
+                    b.classList.add('text-red-400');
+                } else {
+                    b.classList.add('text-gray-300');
+                }
+            });
+            
             btn.classList.add('active');
+            if (category === 'offers') {
+                btn.style.borderBottom = "2px solid #ef4444";
+                btn.classList.remove('text-red-400');
+                btn.classList.add('text-red-500');
+            } else {
+                btn.style.borderBottom = "2px solid #ffffff";
+                btn.classList.remove('text-gray-300');
+                btn.classList.add('text-white');
+            }
 
             const titleEl = document.getElementById('category-title');
             const descEl = document.getElementById('category-desc');
@@ -411,13 +443,16 @@
                 descEl.innerText = "تشكيلة الشتاء الفاخرة - متوفرة الآن";
             } else if (category === 'outfit') {
                 titleEl.innerText = "COMPLETE OUTFITS";
-                descEl.innerText = "إطلالات متكاملة مصممة خصيصاً لنخبة البراند مع عروض الخصم";
+                descEl.innerText = "إطلالات متكاملة مصممة خصيصاً لنخبة البراند";
             } else if (category === 'summer') {
                 titleEl.innerText = "SUMMER DROP";
-                descEl.innerText = "تشكيلة الصيف القادمة مع عروض الخصم";
+                descEl.innerText = "تشكيلة الصيف القادمة";
             } else if (category === 'accessories') {
                 titleEl.innerText = "EXCLUSIVE ACCESSORIES";
                 descEl.innerText = "إكسسوارات راقية لتكتمل إطلالتك";
+            } else if (category === 'offers') {
+                titleEl.innerText = "HOT DEALS 🔥";
+                descEl.innerText = "أقوى العروض بأسعار تناسب الجميع";
             }
 
             let visibleCount = 0;
@@ -442,11 +477,11 @@
             const color = document.getElementById(`color-${productId}`).value;
 
             if (!size) {
-                alert("عذراً، يجب اختيار المقاس أو الفري سايز أولاً لإتمام الطلب!");
+                alert("عذراً، يجب اختيار المقاس أولاً لإتمام الطلب!");
                 return;
             }
 
-            const msg = `أهلاً TRUEFIT، 🦅\n\nأريد طلب القطعة التالية:\n- المنتج: ${productName}\n- اللون: ${color}\n- المقاس: ${size}\n- السعر: ${productPrice}\n\nجاهز لاستلام الأوردر ودفع عند الاستلام.`;
+            const msg = `أهلاً TRUEFIT، 🦅\n\nأريد طلب القطعة التالية:\n- المنتج: ${productName}\n- اللون: ${color}\n- المقاس: ${size}\n- السعر: ${productPrice}\n\nجاهز لاستلام الأوردر.`;
             const encodedMsg = encodeURIComponent(msg);
             
             window.location.href = `https://wa.me/${waNumber}?text=${encodedMsg}`;
