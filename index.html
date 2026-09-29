@@ -260,7 +260,7 @@
                 </div>
             </div>
 
-            <!-- 6. هودي New York بسحاب (مع الصورة الأولى الجديدة) -->
+            <!-- 6. هودي New York بسحاب -->
             <div class="product-card winter bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
@@ -270,10 +270,10 @@
                         <img onclick="changeImage(6, 'https://i.postimg.cc/0yf0z6Q7/Screenshot-20260929-092042.png', 'الرمادي الميلاج')" src="https://i.postimg.cc/0yf0z6Q7/Screenshot-20260929-092042.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
                         <img onclick="changeImage(6, 'https://i.postimg.cc/d172N498/Screenshot-20260929-092109.png', 'الرمادي الميلاج')" src="https://i.postimg.cc/d172N498/Screenshot-20260929-092109.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
                     </div>
-                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي "TRUEFIT" بسحاب وطبعة نيويورك الفاخرة – إطلالة النخبة</h3>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">هودي "TRUEFIT" بسحاب وطبعة نيويورك الفاخرة</h3>
                     <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 999</div>
                     <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: طبعة NEW YORK على الصدر بسحاب أمامي.<br>• الخامة: نسيج ثقيل ودافئ مع سحاب متين.
+                        • التصميم: طبعة NEW YORK مع سحاب أمامي.<br>• الخامة: نسيج ثقيل ودافئ.
                     </div>
                 </div>
                 <div>
@@ -298,7 +298,44 @@
                 </div>
             </div>
 
-            <!-- ================= رسالة لو القسم فاضي (أوتفيت / صيفي / اكسسوارات) ================= -->
+            <!-- ================= منتجات الاكسسوارات (accessories) ================= -->
+
+            <!-- 7. كاب Boston العصري (المنتج الجديد في الاكسسوارات) -->
+            <div class="product-card accessories bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
+                <div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
+                        <img id="main-preview-7" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" alt="كاب Boston العصري" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
+                        <img onclick="changeImage(7, 'https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png', 'الأسود المغسول')" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(7, 'https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png', 'الرمادي الفحمي')" src="https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">كاب "TRUEFIT" بتصميم بوسطن العصري – لمسة جريئة</h3>
+                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        • التصميم: تطريز BOSTON بتصميم ممزق (Distressed).<br>• الخامة: متينة وعالية الجودة للاستخدام اليومي.
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-7" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="الأسود المغسول">الأسود المغسول (Washed Black)</option>
+                            <option value="الرمادي الفحمي">الرمادي الفحمي (Charcoal Grey)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-7" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
+                            <option value="Free Size">مقاس موحد (Free Size)</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="orderProduct('كاب Boston العصري', '550 جنيه', 7)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب عبر واتساب (550 جنيه)
+                    </button>
+                </div>
+            </div>
+
+            <!-- ================= رسالة لو القسم فاضي ================= -->
             <div id="empty-msg" class="hidden col-span-full text-center py-16 text-gray-500">
                 <p class="text-lg font-brand">COMING SOON</p>
                 <p class="text-xs mt-2">تشكيلة هذا القسم ستتوفر قريباً جداً.. انتظرونا!</p>
@@ -360,7 +397,7 @@
             const color = document.getElementById(`color-${productId}`).value;
 
             if (!size) {
-                alert("عذراً، يجب اختيار المقاس أولاً لإتمام الطلب!");
+                alert("عذراً، يجب اختيار المقاس أو الفري سايز أولاً لإتمام الطلب!");
                 return;
             }
 
