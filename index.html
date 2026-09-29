@@ -30,10 +30,10 @@
     <!-- ================= شريط الإعلانات المتحرك العلوي ================= -->
     <div class="bg-zinc-900 border-b border-zinc-800 text-zinc-300 text-xs py-2 overflow-hidden whitespace-nowrap">
         <div class="animate-marquee flex gap-12 font-medium tracking-wide">
-            <span>🔥 خصم 25% على كل القطع الصيفية لفترة محدودة</span>
+            <span>🔥 خصم 25% على كل القطع الصيفية والأوتفيتات لفترة محدودة</span>
             <span>⚡ توصيل مجاني لأي مكان في مصر</span>
             <span>🦅 TRUEFIT - إطلالة النخبة بضمان الثقة</span>
-            <span>🔥 خصم 25% على كل القطع الصيفية لفترة محدودة</span>
+            <span>🔥 خصم 25% على كل القطع الصيفية والأوتفيتات لفترة محدودة</span>
             <span>⚡ توصيل مجاني لأي مكان في مصر</span>
         </div>
     </div>
@@ -298,38 +298,83 @@
                 </div>
             </div>
 
-            <!-- ================= منتجات الاكسسوارات (accessories) ================= -->
+            <!-- ================= منتجات أوتفيت كامل (outfit) ================= -->
 
-            <!-- 7. كاب Boston العصري (المنتج الجديد في الاكسسوارات) -->
-            <div class="product-card accessories bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
+            <!-- 7. الأوتفيت المتكامل (تيشيرت + بنطلون ترنينج + كاب) - الجديد -->
+            <div class="product-card outfit bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
                 <div>
                     <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
-                        <img id="main-preview-7" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" alt="كاب Boston العصري" class="w-full h-72 object-cover transition duration-300">
+                        <img id="main-preview-7" src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" alt="أوتفيت TRUEFIT المتكامل" class="w-full h-72 object-cover transition duration-300">
                     </div>
                     <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
-                        <img onclick="changeImage(7, 'https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png', 'الأسود المغسول')" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
-                        <img onclick="changeImage(7, 'https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png', 'الرمادي الفحمي')" src="https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(7, 'https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg', 'البنفسجي الداكن مع الرمادي والأسود')" src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
                     </div>
-                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">كاب "TRUEFIT" بتصميم بوسطن العصري – لمسة جريئة</h3>
-                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">أوتفيت "TRUEFIT" المتكامل (تيشيرت برنت + بنطلون ترنينج + كاب)</h3>
+                    
+                    <!-- عرض السعر الفخم مع الخصم -->
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-xl font-brand text-white tracking-wide">EGP 1387.5</span>
+                        <span class="text-xs text-gray-500 line-through">1850 EGP</span>
+                        <span class="bg-red-600/20 text-red-400 text-[10px] font-bold px-2 py-0.5 rounded border border-red-600/30">خصم 25%</span>
+                    </div>
+
                     <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
-                        • التصميم: تطريز BOSTON بتصميم ممزق (Distressed).<br>• الخامة: متينة وعالية الجودة للاستخدام اليومي.
+                        • المكونات: تيشيرت برنت فخم + بنطلون ترنينج مريح + كاب أنيق.<br>• الخامة: أقمشة فائقة النعومة ومصممة لحرية الحركة.
                     </div>
                 </div>
                 <div>
                     <div class="mb-3">
                         <select id="color-7" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
-                            <option value="الأسود المغسول">الأسود المغسول (Washed Black)</option>
-                            <option value="الرمادي الفحمي">الرمادي الفحمي (Charcoal Grey)</option>
+                            <option value="البنفسجي الداكن مع الرمادي والأسود">البنفسجي الداكن (تيشيرت) + الرمادي (ترنينج) + الأسود (كاب)</option>
                         </select>
                     </div>
                     <div class="mb-4">
                         <select id="size-7" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
                             <option value="" disabled selected>اختر المقاس</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">X-Large (XL)</option>
+                            <option value="XXL">XX-Large (XXL)</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="orderProduct('أوتفيت TRUEFIT المتكامل', '1387.5 جنيه (بعد خصم 25%)', 7)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                        اطلب الأوتفيت عبر واتساب (1387.5 جنيه)
+                    </button>
+                </div>
+            </div>
+
+            <!-- ================= منتجات الاكسسوارات (accessories) ================= -->
+
+            <!-- 8. كاب Boston العصري -->
+            <div class="product-card accessories bg-gray-900 border border-gray-800 rounded-xl overflow-hidden p-5 flex flex-col justify-between" style="display: none;">
+                <div>
+                    <div class="mb-3 overflow-hidden rounded-lg border border-gray-800 bg-black">
+                        <img id="main-preview-8" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" alt="كاب Boston العصري" class="w-full h-72 object-cover transition duration-300">
+                    </div>
+                    <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar mb-4">
+                        <img onclick="changeImage(8, 'https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png', 'الأسود المغسول')" src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                        <img onclick="changeImage(8, 'https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png', 'الرمادي الفحمي')" src="https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png" class="w-14 h-14 object-cover rounded cursor-pointer border-2 border-transparent hover:border-white transition">
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-2 leading-snug">كاب "TRUEFIT" بتصميم بوسطن العصري</h3>
+                    <div class="text-xl font-brand mb-3 text-white tracking-wide">EGP 550</div>
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded-lg mb-4 text-[11px] text-gray-400 leading-relaxed">
+                        • التصميم: تطريز BOSTON بتصميم ممزق (Distressed).<br>• الخامة: متينة وعالية الجودة.
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <select id="color-8" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="الأسود المغسول">الأسود المغسول (Washed Black)</option>
+                            <option value="الرمادي الفحمي">الرمادي الفحمي (Charcoal Grey)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select id="size-8" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded text-xs">
+                            <option value="" disabled selected>اختر المقاس</option>
                             <option value="Free Size">مقاس موحد (Free Size)</option>
                         </select>
                     </div>
-                    <button type="button" onclick="orderProduct('كاب Boston العصري', '550 جنيه', 7)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
+                    <button type="button" onclick="orderProduct('كاب Boston العصري', '550 جنيه', 8)" class="w-full bg-white text-black font-bold py-3 rounded text-xs hover:bg-gray-200 transition shadow cursor-pointer">
                         اطلب عبر واتساب (550 جنيه)
                     </button>
                 </div>
@@ -366,7 +411,7 @@
                 descEl.innerText = "تشكيلة الشتاء الفاخرة - متوفرة الآن";
             } else if (category === 'outfit') {
                 titleEl.innerText = "COMPLETE OUTFITS";
-                descEl.innerText = "إطلالات متكاملة مصممة خصيصاً لنخبة البراند";
+                descEl.innerText = "إطلالات متكاملة مصممة خصيصاً لنخبة البراند مع عروض الخصم";
             } else if (category === 'summer') {
                 titleEl.innerText = "SUMMER DROP";
                 descEl.innerText = "تشكيلة الصيف القادمة مع عروض الخصم";
