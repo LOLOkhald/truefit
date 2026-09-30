@@ -9,7 +9,7 @@
     <style>
         .font-brand { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
         .font-arabic { font-family: 'Cairo', sans-serif; }
-        body { background-color: #050505; color: #ffffff; }
+        body { background-color: #0f0f0f; color: #ffffff; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .tab-btn.active { border-bottom: 2px solid #ffffff; color: #ffffff; font-weight: 700; }
@@ -64,76 +64,66 @@
 
     <div class="flex-grow">
         
-        <!-- واجهة الأقسام الرئيسية -->
+        <!-- واجهة الأقسام الرئيسية (بالتصميم الاحترافي الجديد مشابه للصورة) -->
         <main id="categories-view" class="max-w-6xl mx-auto mt-8 px-4 pb-12">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-brand tracking-widest text-white">COLLECTIONS</h2>
-                <p class="text-xs text-gray-400 mt-2">تسوق حسب القسم</p>
+                <p class="text-xs text-gray-400 mt-2">اختر القسم المناسب لإطلالتك</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                 <!-- 1. أقوى العروض -->
-                <div onclick="openCategory('offers')" class="cursor-pointer group relative overflow-hidden rounded-2xl aspect-[4/5] border border-gray-800 hover:border-red-600 transition-colors duration-500">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-40 mix-blend-screen grayscale group-hover:grayscale-0">
-                    <div class="absolute inset-0 bg-gradient-to-b from-red-900/20 via-black/80 to-[#050505]"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="font-brand text-5xl md:text-6xl text-white/90 tracking-[0.2em] group-hover:text-red-500 group-hover:scale-105 transition duration-500 drop-shadow-2xl">TRUEFIT</span>
+                <div onclick="openCategory('offers')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-red-500 transition duration-300">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 flex justify-between items-center">
-                        <span class="font-bold text-red-500 text-lg md:text-xl group-hover:text-red-400 transition">أقوى العروض 🔥</span>
-                        <svg class="w-6 h-6 text-red-500 transform group-hover:-translate-x-2 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-red-400 text-sm md:text-base">أقوى العروض 🔥</h3>
+                        <p class="text-[11px] text-gray-400 mt-1">تخفيضات لفترة محدودة</p>
                     </div>
                 </div>
 
                 <!-- 2. الشتوي -->
-                <div onclick="openCategory('winter')" class="cursor-pointer group relative overflow-hidden rounded-2xl aspect-[4/5] border border-gray-800 hover:border-blue-400 transition-colors duration-500">
-                    <img src="https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-40 mix-blend-overlay">
-                    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-black/80 to-[#050505]"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="font-brand text-5xl md:text-6xl text-white/90 tracking-[0.2em] group-hover:text-blue-300 group-hover:scale-105 transition duration-500 drop-shadow-2xl">TRUEFIT</span>
+                <div onclick="openCategory('winter')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 flex justify-between items-center">
-                        <span class="font-bold text-white text-lg md:text-xl group-hover:text-blue-200 transition">تشكيلة الشتاء ❄️</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-blue-300 transform group-hover:-translate-x-2 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-white text-sm md:text-base">تشكيلة الشتاء ❄️</h3>
+                        <p class="text-[11px] text-gray-400 mt-1">أحدث هوديز وجواكت</p>
                     </div>
                 </div>
 
                 <!-- 3. أوتفيت كامل -->
-                <div onclick="openCategory('outfit')" class="cursor-pointer group relative overflow-hidden rounded-2xl aspect-[4/5] border border-gray-800 hover:border-purple-500 transition-colors duration-500">
-                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-30 mix-blend-luminosity">
-                    <div class="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-black/80 to-[#050505]"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="font-brand text-5xl md:text-6xl text-white/90 tracking-[0.2em] group-hover:text-purple-400 group-hover:scale-105 transition duration-500 drop-shadow-2xl">TRUEFIT</span>
+                <div onclick="openCategory('outfit')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 flex justify-between items-center">
-                        <span class="font-bold text-white text-lg md:text-xl group-hover:text-purple-300 transition">أوتفيت كامل ✨</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-purple-400 transform group-hover:-translate-x-2 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-white text-sm md:text-base">أوتفيت كامل ✨</h3>
+                        <p class="text-[11px] text-gray-400 mt-1">إطلالات متكاملة منسقة بعناية</p>
                     </div>
                 </div>
 
                 <!-- 4. الصيفي -->
-                <div onclick="openCategory('summer')" class="cursor-pointer group relative overflow-hidden rounded-2xl aspect-[4/5] border border-gray-800 hover:border-orange-500 transition-colors duration-500">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-40 mix-blend-overlay grayscale group-hover:grayscale-0">
-                    <div class="absolute inset-0 bg-gradient-to-b from-orange-900/20 via-black/80 to-[#050505]"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="font-brand text-5xl md:text-6xl text-white/90 tracking-[0.2em] group-hover:text-orange-400 group-hover:scale-105 transition duration-500 drop-shadow-2xl">TRUEFIT</span>
+                <div onclick="openCategory('summer')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 flex justify-between items-center">
-                        <span class="font-bold text-white text-lg md:text-xl group-hover:text-orange-300 transition">التشكيلة الصيفية ☀️</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-orange-400 transform group-hover:-translate-x-2 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-white text-sm md:text-base">التشكيلة الصيفية ☀️</h3>
+                        <p class="text-[11px] text-gray-400 mt-1">أزياء صيفية عصرية</p>
                     </div>
                 </div>
 
                 <!-- 5. الاكسسوارات -->
-                <div onclick="openCategory('accessories')" class="cursor-pointer group relative overflow-hidden rounded-2xl aspect-[4/5] border border-gray-800 hover:border-yellow-500 transition-colors duration-500">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-40 mix-blend-screen">
-                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-900/10 via-black/80 to-[#050505]"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="font-brand text-5xl md:text-6xl text-white/90 tracking-[0.2em] group-hover:text-yellow-500 group-hover:scale-105 transition duration-500 drop-shadow-2xl">TRUEFIT</span>
+                <div onclick="openCategory('accessories')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 flex justify-between items-center">
-                        <span class="font-bold text-white text-lg md:text-xl group-hover:text-yellow-400 transition">الاكسسوارات 💎</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-yellow-500 transform group-hover:-translate-x-2 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-white text-sm md:text-base">الاكسسوارات 💎</h3>
+                        <p class="text-[11px] text-gray-400 mt-1">كابات وتفاصيل مميزة</p>
                     </div>
                 </div>
             </div>
@@ -150,7 +140,7 @@
                 <p id="category-desc" class="text-xs text-gray-400 mt-1">اكتشف أحدث الموديلات</p>
             </div>
             
-            <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"></div>
+            <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
             <div id="empty-msg" class="hidden text-center py-20 text-gray-500">
                 <p class="text-xl font-brand">COMING SOON</p>
                 <p class="text-sm mt-2">تشكيلة هذا القسم ستتوفر قريباً جداً.. انتظرونا!</p>
@@ -170,7 +160,7 @@
 
     <!-- نافذة المنتج السريعة مع حقل القسيمة -->
     <div id="product-modal" class="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/80 backdrop-blur-sm modal-leave transition-opacity duration-300">
-        <div id="modal-content" class="bg-[#0f0f0f] border border-gray-800 w-full md:w-[500px] max-h-[90vh] overflow-y-auto rounded-t-3xl md:rounded-3xl relative modal-content-leave transition-all duration-300 shadow-2xl">
+        <div id="modal-content" class="bg-[#121212] border border-gray-800 w-full md:w-[500px] max-h-[90vh] overflow-y-auto rounded-t-3xl md:rounded-3xl relative modal-content-leave transition-all duration-300 shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/60 backdrop-blur text-white p-2.5 rounded-full hover:bg-white hover:text-black transition z-10 border border-gray-700">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
@@ -179,7 +169,7 @@
     </div>
 
     <!-- الفوتر -->
-    <footer class="bg-[#050505] border-t border-gray-900 mt-16 pb-8">
+    <footer class="bg-[#0b0b0b] border-t border-gray-900 mt-16 pb-8">
         <div class="max-w-6xl mx-auto px-6">
             <div class="border-b border-gray-900">
                 <button onclick="toggleFooter('footer-cats', 'icon-cats')" class="w-full flex justify-between items-center py-5 text-white cursor-pointer">
@@ -237,7 +227,7 @@
             'shipping': { title: 'سياسة الشحن والتوصيل 🚚', content: `<p class="mb-4 font-bold text-white">بنوصلك بأسرع وقت لجميع محافظات مصر مع الدفع عند الاستلام.</p>` }
         };
 
-        // توليد 50 قسيمة هدية صعبة ومعقدة تماماً (أحرف وأرقام عشوائية) بقيمة خصم 100 جنيه
+        // الـ 50 قسيمة الصعبة (الآمنة تماماً ضد التخمين)
         const secretPool = [
             "TF-9K2M-8X", "TF-4W7P-1N", "TF-3J8L-5V", "TF-6H1Q-9C", "TF-2Y5Z-4B",
             "TF-7X3W-6M", "TF-1P9N-2K", "TF-8V4J-7L", "TF-5C6H-3Q", "TF-0B2Y-8Z",
@@ -275,16 +265,16 @@
                     const badgeHTML = p.badge ? `<div class="absolute top-2 right-2 bg-red-600 text-white text-[9px] font-bold px-2 py-1 rounded shadow-md z-10">${p.badge}</div>` : '';
 
                     grid.innerHTML += `
-                        <div class="group cursor-pointer rounded-xl overflow-hidden bg-[#0a0a0a] border border-gray-900 hover:border-gray-700 transition" onclick="openModal(${p.id})">
+                        <div class="group cursor-pointer rounded-2xl overflow-hidden bg-zinc-900/40 border border-gray-800/80 hover:border-gray-600 transition shadow-lg" onclick="openModal(${p.id})">
                             <div class="relative w-full aspect-[3/4] bg-zinc-900 overflow-hidden">
                                 ${badgeHTML}
                                 <img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                     <div class="bg-white/95 backdrop-blur text-black px-4 py-2 rounded-full text-xs font-bold shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all">نظرة سريعة</div>
                                 </div>
                             </div>
-                            <div class="p-3 md:p-4 text-center flex flex-col justify-between min-h-[85px]">
-                                <h3 class="text-[11px] md:text-[13px] font-bold text-gray-200 leading-tight mb-2">${p.title}</h3>
+                            <div class="p-4 text-center flex flex-col justify-between min-h-[85px]">
+                                <h3 class="text-xs md:text-sm font-bold text-gray-200 leading-tight mb-2">${p.title}</h3>
                                 ${priceHTML}
                             </div>
                         </div>
@@ -360,7 +350,7 @@
             const sizesHTML = product.sizes.map(s => `<option value="${s}">${s}</option>`).join('');
             
             modalBody.innerHTML = `
-                <div class="mb-4 rounded-xl overflow-hidden bg-black border border-gray-800">
+                <div class="mb-4 rounded-2xl overflow-hidden bg-black border border-gray-800">
                     <img id="modal-main-img" src="${product.images[0]}" class="w-full h-72 object-cover">
                 </div>
                 ${product.images.length > 1 ? `<div class="flex gap-2 mb-4 justify-center">${imagesHTML}</div>` : ''}
@@ -374,11 +364,11 @@
                 <div class="grid grid-cols-2 gap-3 mb-4">
                     <div>
                         <label class="block text-[10px] text-gray-400 mb-1">اللون</label>
-                        <select id="modal-color" class="w-full bg-[#111] border border-gray-700 text-white p-2.5 rounded text-xs">${colorsHTML}</select>
+                        <select id="modal-color" class="w-full bg-[#1a1a1a] border border-gray-700 text-white p-2.5 rounded text-xs">${colorsHTML}</select>
                     </div>
                     <div>
                         <label class="block text-[10px] text-gray-400 mb-1">المقاس</label>
-                        <select id="modal-size" class="w-full bg-[#111] border border-gray-700 text-white p-2.5 rounded text-xs">
+                        <select id="modal-size" class="w-full bg-[#1a1a1a] border border-gray-700 text-white p-2.5 rounded text-xs">
                             <option value="" disabled selected>اختر المقاس</option>
                             ${sizesHTML}
                         </select>
@@ -386,37 +376,22 @@
                 </div>
 
                 <!-- حقل قسيمة الخصم -->
-                <div class="mb-6 bg-zinc-900/60 border border-gray-800 p-3 rounded-xl">
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-[11px] text-gray-300 font-bold">كود القسيمة أو الهدية 🎁</label>
-                        <button type="button" onclick="getSampleCoupon()" class="text-[10px] text-red-400 hover:text-red-300 underline">تجربة كود عشوائي</button>
-                    </div>
+                <div class="mb-6 bg-zinc-900/80 border border-gray-800 p-3 rounded-2xl">
+                    <label class="block text-[11px] text-gray-300 font-bold mb-2">كود القسيمة أو الهدية 🎁</label>
                     <div class="flex gap-2">
-                        <input type="text" id="coupon-input" placeholder="مثال: TF-9K2M-8X" class="w-full bg-black border border-gray-700 text-white uppercase px-3 py-2 rounded text-xs focus:outline-none focus:border-white">
+                        <input type="text" id="coupon-input" placeholder="أدخل كود القسيمة هنا" class="w-full bg-black border border-gray-700 text-white uppercase px-3 py-2 rounded text-xs focus:outline-none focus:border-white">
                         <button type="button" onclick="applyCoupon()" class="bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded text-xs font-bold transition">تطبيق</button>
                     </div>
                     <p id="coupon-msg" class="text-[11px] mt-2 hidden"></p>
                 </div>
 
-                <button onclick="orderFromModal('${product.title}')" class="w-full bg-white text-black font-bold py-3.5 rounded text-xs hover:bg-gray-200 transition shadow-lg flex justify-center items-center gap-2">
+                <button onclick="orderFromModal('${product.title}')" class="w-full bg-white text-black font-bold py-3.5 rounded-xl text-xs hover:bg-gray-200 transition shadow-lg flex justify-center items-center gap-2">
                     <span>اطلب الآن عبر واتساب</span>
                 </button>
             `;
 
             modal.classList.replace('modal-leave', 'modal-enter');
             setTimeout(() => modalContent.classList.replace('modal-content-leave', 'modal-content-enter'), 10);
-        }
-
-        // زر مساعد لتجربة كود عشوائي من الـ 50 كود
-        function getSampleCoupon() {
-            const usedCoupons = JSON.parse(localStorage.getItem('truefit_used_coupons') || "[]");
-            // نبحث عن أول كود لم يُستخدم بعد
-            const available = secretPool.find(c => !usedCoupons.includes(c));
-            if(available) {
-                document.getElementById('coupon-input').value = available;
-            } else {
-                alert("لقد تم تجربة واستخدام جميع القسائم الـ 50 في هذا المتصفح!");
-            }
         }
 
         function applyCoupon() {
