@@ -64,7 +64,7 @@
 
     <div class="flex-grow">
         
-        <!-- واجهة الأقسام الرئيسية (بالتصميم الاحترافي الجديد مشابه للصورة) -->
+        <!-- واجهة الأقسام الرئيسية (بشكل موحد وفخم لكل الأقسام) -->
         <main id="categories-view" class="max-w-6xl mx-auto mt-8 px-4 pb-12">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-brand tracking-widest text-white">COLLECTIONS</h2>
@@ -72,10 +72,12 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+                
                 <!-- 1. أقوى العروض -->
                 <div onclick="openCategory('offers')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-red-500 transition duration-300">
                     <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://i.postimg.cc/0yf0z6Q7/Screenshot-20260929-092042.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-red-400 border border-red-500/30">TRUEFIT</div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-red-400 text-sm md:text-base">أقوى العروض 🔥</h3>
@@ -86,7 +88,8 @@
                 <!-- 2. الشتوي -->
                 <div onclick="openCategory('winter')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
                     <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-white border border-white/20">TRUEFIT</div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-white text-sm md:text-base">تشكيلة الشتاء ❄️</h3>
@@ -97,7 +100,8 @@
                 <!-- 3. أوتفيت كامل -->
                 <div onclick="openCategory('outfit')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
                     <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-purple-300 border border-purple-500/30">TRUEFIT</div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-white text-sm md:text-base">أوتفيت كامل ✨</h3>
@@ -108,7 +112,8 @@
                 <!-- 4. الصيفي -->
                 <div onclick="openCategory('summer')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
                     <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-orange-400 border border-orange-500/30">TRUEFIT</div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-white text-sm md:text-base">التشكيلة الصيفية ☀️</h3>
@@ -119,13 +124,15 @@
                 <!-- 5. الاكسسوارات -->
                 <div onclick="openCategory('accessories')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
                     <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-yellow-400 border border-yellow-500/30">TRUEFIT</div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="font-bold text-white text-sm md:text-base">الاكسسوارات 💎</h3>
                         <p class="text-[11px] text-gray-400 mt-1">كابات وتفاصيل مميزة</p>
                     </div>
                 </div>
+
             </div>
         </main>
 
@@ -224,10 +231,9 @@
         const pagesData = {
             'about': { title: 'من نحن - قصة TRUEFIT 🦅', content: `<p class="mb-4 font-bold text-white text-lg">إحنا مش مجرد براند.. إحنا حلم شباب جامعي بدأ بفكره وطموح ملوش حدود! 🎓✨</p><p class="mb-4">بدأت قصة TRUEFIT من وسط مدرجات الجامعة، مجموعة شباب زيك بالظبط.</p>` },
             'returns': { title: 'سياسة الاستبدال والاسترجاع 🔄', content: `<p class="mb-4 font-bold text-white">الاستبدال والاسترجاع متاح بكل سهولة خلال <strong>14 يوم</strong>.</p>` },
-            'shipping': { title: 'سياسة الشحن والتوصيل 🚚', content: `<p class="mb-4 font-bold text-white">بنوصلك بأسرع وقت لجميع محافظات مصر مع الدفع عند الاستلام.</p>` }
+            'shipping': { title: 'سياسة الشحن والتوصيل 🚚', content: `<p class="mb-4 font-bold text-white">بنوصلك بأسرع وقت لجميع محافظات مصر مع الدفع عند الاستلاستلام.</p>` }
         };
 
-        // الـ 50 قسيمة الصعبة (الآمنة تماماً ضد التخمين)
         const secretPool = [
             "TF-9K2M-8X", "TF-4W7P-1N", "TF-3J8L-5V", "TF-6H1Q-9C", "TF-2Y5Z-4B",
             "TF-7X3W-6M", "TF-1P9N-2K", "TF-8V4J-7L", "TF-5C6H-3Q", "TF-0B2Y-8Z",
