@@ -28,6 +28,9 @@
             .modal-content-enter { transform: scale(1); opacity: 1; }
             .modal-content-leave { transform: scale(0.95); opacity: 0; }
         }
+        
+        /* تأثيرات لغلاف الأقسام */
+        .category-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%); }
     </style>
 </head>
 <body class="font-arabic antialiased text-sm flex flex-col min-h-screen">
@@ -74,65 +77,83 @@
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                 
                 <!-- 1. أقوى العروض -->
-                <div onclick="openCategory('offers')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-red-500 transition duration-300">
-                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://i.postimg.cc/9fzWc01R/IMG-20261001-041444-427.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-red-400 border border-red-500/30">TRUEFIT</div>
+                <div onclick="openCategory('offers')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-red-500 transition duration-300 relative aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
+                    <div class="absolute inset-0 category-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="font-brand text-4xl md:text-5xl text-white tracking-[0.15em] drop-shadow-2xl group-hover:scale-105 transition">TRUEFIT</span>
                     </div>
-                    <div class="p-4 text-center">
-                        <h3 class="font-bold text-red-400 text-sm md:text-base">أقوى العروض 🔥</h3>
-                        <p class="text-[11px] text-gray-400 mt-1">تخفيضات لفترة محدودة</p>
+                    <div class="absolute inset-x-0 bottom-0 p-5 text-center">
+                        <h3 class="font-bold text-red-400 text-sm md:text-base mb-1">أقوى العروض 🔥</h3>
+                        <p class="text-[10px] md:text-xs text-gray-300">تخفيضات لفترة محدودة</p>
                     </div>
                 </div>
 
                 <!-- 2. الشتوي -->
-                <div onclick="openCategory('winter')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
-                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://i.postimg.cc/prnfF4gZ/IMG-20260928-WA0059.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-white border border-white/20">TRUEFIT</div>
+                <div onclick="openCategory('winter')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300 relative aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
+                    <div class="absolute inset-0 category-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="font-brand text-4xl md:text-5xl text-white tracking-[0.15em] drop-shadow-2xl group-hover:scale-105 transition">TRUEFIT</span>
                     </div>
-                    <div class="p-4 text-center">
-                        <h3 class="font-bold text-white text-sm md:text-base">تشكيلة الشتاء ❄️️</h3>
-                        <p class="text-[11px] text-gray-400 mt-1">أحدث هوديز وجواكت</p>
+                    <div class="absolute inset-x-0 bottom-0 p-5 text-center">
+                        <h3 class="font-bold text-white text-sm md:text-base mb-1">تشكيلة الشتاء ❄️</h3>
+                        <p class="text-[10px] md:text-xs text-gray-300">أحدث هوديز وجواكت</p>
                     </div>
                 </div>
 
                 <!-- 3. أوتفيت كامل -->
-                <div onclick="openCategory('outfit')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
-                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://i.postimg.cc/wjQ5PtYj/FB-IMG-1790664785372.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-purple-300 border border-purple-500/30">TRUEFIT</div>
+                <div onclick="openCategory('outfit')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-purple-400 transition duration-300 relative aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60 grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 category-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="font-brand text-4xl md:text-5xl text-white tracking-[0.15em] drop-shadow-2xl group-hover:scale-105 transition">TRUEFIT</span>
                     </div>
-                    <div class="p-4 text-center">
-                        <h3 class="font-bold text-white text-sm md:text-base">أوتفيت كامل ✨</h3>
-                        <p class="text-[11px] text-gray-400 mt-1">إطلالات متكاملة منسقة بعناية</p>
+                    <div class="absolute inset-x-0 bottom-0 p-5 text-center">
+                        <h3 class="font-bold text-purple-300 text-sm md:text-base mb-1">أوتفيت كامل ✨</h3>
+                        <p class="text-[10px] md:text-xs text-gray-300">إطلالات متكاملة منسقة بعناية</p>
                     </div>
                 </div>
 
                 <!-- 4. الصيفي -->
-                <div onclick="openCategory('summer')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
-                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-orange-400 border border-orange-500/30">TRUEFIT</div>
+                <div onclick="openCategory('summer')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-orange-400 transition duration-300 relative aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
+                    <div class="absolute inset-0 category-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="font-brand text-4xl md:text-5xl text-white tracking-[0.15em] drop-shadow-2xl group-hover:scale-105 transition">TRUEFIT</span>
                     </div>
-                    <div class="p-4 text-center">
-                        <h3 class="font-bold text-white text-sm md:text-base">التشكيلة الصيفية ☀️</h3>
-                        <p class="text-[11px] text-gray-400 mt-1">أزياء صيفية عصرية</p>
+                    <div class="absolute inset-x-0 bottom-0 p-5 text-center">
+                        <h3 class="font-bold text-orange-400 text-sm md:text-base mb-1">التشكيلة الصيفية ☀️</h3>
+                        <p class="text-[10px] md:text-xs text-gray-300">أزياء صيفية عصرية</p>
                     </div>
                 </div>
 
                 <!-- 5. الاكسسوارات -->
-                <div onclick="openCategory('accessories')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-white transition duration-300">
-                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
-                        <img src="https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] font-brand tracking-widest text-yellow-400 border border-yellow-500/30">TRUEFIT</div>
+                <div onclick="openCategory('accessories')" class="cursor-pointer group bg-zinc-900/40 border border-gray-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-yellow-400 transition duration-300 relative aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10ee?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
+                    <div class="absolute inset-0 category-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="font-brand text-4xl md:text-5xl text-white tracking-[0.15em] drop-shadow-2xl group-hover:scale-105 transition">TRUEFIT</span>
                     </div>
-                    <div class="p-4 text-center">
-                        <h3 class="font-bold text-white text-sm md:text-base">الاكسسوارات 💎</h3>
-                        <p class="text-[11px] text-gray-400 mt-1">كابات وتفاصيل مميزة</p>
+                    <div class="absolute inset-x-0 bottom-0 p-5 text-center">
+                        <h3 class="font-bold text-yellow-500 text-sm md:text-base mb-1">الاكسسوارات 💎</h3>
+                        <p class="text-[10px] md:text-xs text-gray-300">كابات وتفاصيل مميزة</p>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- قسم المشاركة والتقييم الإبداعي في الصفحة الرئيسية -->
+            <div class="mt-16 bg-gradient-to-br from-zinc-900 to-black border border-gray-800 rounded-3xl p-6 md:p-8 text-center relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 opacity-5">
+                    <span class="font-brand text-9xl">TF</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-2 relative z-10">عيلتنا بتكبر بيك 🦅</h3>
+                <p class="text-xs md:text-sm text-gray-400 mb-6 max-w-md mx-auto leading-relaxed relative z-10">إنت مش مجرد عميل، إنت شريك في نجاح البراند. شاركنا تجربتك، رأيك، وصورتك بالمنتج عشان تلهم غيرك بإطلالتك!</p>
+                <button onclick="openGlobalReviewModal()" class="relative z-10 bg-white text-black font-bold px-6 py-3 rounded-full text-xs md:text-sm hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2 mx-auto">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    قيمنا وأضف صورتك بالمنتج
+                </button>
             </div>
         </main>
 
@@ -175,22 +196,35 @@
         </div>
     </div>
 
-    <!-- نافذة كتابة التقييم الجديد -->
-    <div id="review-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md hidden">
-        <div class="bg-[#181818] border border-gray-800 w-[90%] md:w-[400px] p-6 rounded-2xl relative shadow-2xl">
-            <h3 class="text-base font-bold text-white mb-4 text-center">أضف تقييمك للمنتج ⭐</h3>
-            <div class="flex justify-center gap-2 mb-4 text-2xl cursor-pointer" id="star-rating-picker">
-                <span onclick="setRating(1)" class="text-yellow-500">★</span>
-                <span onclick="setRating(2)" class="text-yellow-500">★</span>
-                <span onclick="setRating(3)" class="text-yellow-500">★</span>
-                <span onclick="setRating(4)" class="text-yellow-500">★</span>
-                <span onclick="setRating(5)" class="text-yellow-500">★</span>
+    <!-- نافذة التقييم العامة المبتكرة -->
+    <div id="global-review-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md hidden">
+        <div class="bg-[#181818] border border-gray-800 w-[90%] md:w-[450px] p-6 rounded-3xl relative shadow-2xl">
+            <h3 class="text-lg font-bold text-white mb-2 text-center">أضف لمستك في TRUEFIT 📸</h3>
+            <p class="text-xs text-gray-400 text-center mb-6">رأيك بيفرق معانا.. وصورتك بالمنتج بتدي ثقة للعيلة كلها!</p>
+            
+            <div class="flex justify-center gap-2 mb-5 text-3xl cursor-pointer" id="global-star-picker">
+                <span onclick="setGlobalRating(1)" class="text-yellow-500 transition">★</span>
+                <span onclick="setGlobalRating(2)" class="text-yellow-500 transition">★</span>
+                <span onclick="setGlobalRating(3)" class="text-yellow-500 transition">★</span>
+                <span onclick="setGlobalRating(4)" class="text-yellow-500 transition">★</span>
+                <span onclick="setGlobalRating(5)" class="text-yellow-500 transition">★</span>
             </div>
-            <input type="text" id="reviewer-name" placeholder="اسمك الكريم" class="w-full bg-black border border-gray-700 text-white p-2.5 rounded-xl text-xs mb-3">
-            <textarea id="reviewer-comment" placeholder="اكتب رأيك بصراحة في المنتج والخامة..." class="w-full bg-black border border-gray-700 text-white p-2.5 rounded-xl text-xs mb-4 h-20 resize-none"></textarea>
-            <div class="flex gap-2">
-                <button onclick="submitReview()" class="w-full bg-white text-black font-bold py-2.5 rounded-xl text-xs hover:bg-gray-200 transition">إرسال التقييم</button>
-                <button onclick="closeReviewModal()" class="w-full bg-zinc-800 text-white font-bold py-2.5 rounded-xl text-xs hover:bg-zinc-700 transition">إلغاء</button>
+            
+            <input type="text" id="global-rev-name" placeholder="الاسم الكريم" class="w-full bg-black border border-gray-700 focus:border-white text-white p-3 rounded-xl text-xs mb-3 outline-none transition">
+            <textarea id="global-rev-text" placeholder="اكتب لنا رأيك الصريح عن الخامة والتجربة..." class="w-full bg-black border border-gray-700 focus:border-white text-white p-3 rounded-xl text-xs mb-4 h-24 resize-none outline-none transition"></textarea>
+            
+            <!-- زر رفع الصورة الوهمي (UI) -->
+            <label class="flex flex-col items-center justify-center w-full h-24 border-2 border-gray-700 border-dashed rounded-xl cursor-pointer hover:border-gray-500 bg-black/50 hover:bg-black transition mb-6">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg class="w-6 h-6 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                    <p class="text-[10px] text-gray-400 font-bold">أرفق صورة لمنتجك (اختياري)</p>
+                </div>
+                <input type="file" class="hidden" accept="image/*" onchange="alert('تم اختيار الصورة بنجاح! سيتم مراجعتها.')" />
+            </label>
+
+            <div class="flex gap-3">
+                <button onclick="submitGlobalReview()" class="w-2/3 bg-white text-black font-bold py-3 rounded-xl text-sm hover:bg-gray-200 transition">إرسال المشاركة</button>
+                <button onclick="closeGlobalReviewModal()" class="w-1/3 bg-zinc-800 text-white font-bold py-3 rounded-xl text-sm hover:bg-zinc-700 transition">إلغاء</button>
             </div>
         </div>
     </div>
@@ -220,7 +254,7 @@
                 </button>
                 <div id="footer-pages" class="hidden pb-5">
                     <ul class="flex flex-col gap-4 text-right">
-                        <li><a href="#" onclick="openPage('about'); return false;" class="text-gray-400 hover:text-white transition">من نحن (قصتنا 🦅)</a></li>
+                        <li><a href="#" onclick="openPage('about'); return false;" class="text-gray-400 hover:text-white transition">قصتنا (من نحن 🦅)</a></li>
                         <li><a href="#" onclick="openPage('returns'); return false;" class="text-gray-400 hover:text-white transition">سياسة الاستبدال و الاسترجاع</a></li>
                         <li><a href="#" onclick="openPage('shipping'); return false;" class="text-gray-400 hover:text-white transition">سياسة الشحن</a></li>
                     </ul>
@@ -281,10 +315,22 @@
             { id: 8, cat: 'accessories', title: 'كاب Boston العصري', price: 550, images: ['https://i.postimg.cc/c1FKtQMw/Screenshot-20260929-092353.png', 'https://i.postimg.cc/R0xqxG9Q/Screenshot-20260929-092410.png'], colors: ['الأسود المغسول', 'الرمادي الفحمي'], sizes: ['Free Size'] }
         ];
 
+        // القصة الكاملة والمؤثرة للبراند
         const pagesData = {
-            'about': { title: 'من نحن - قصة TRUEFIT 🦅', content: `<p class="mb-4 font-bold text-white text-lg">إحنا مش مجرد براند.. إحنا حلم شباب جامعي بدأ بفكره وطموح ملوش حدود! 🎓✨</p><p class="mb-4">بدأت قصة TRUEFIT من وسط مدرجات الجامعة، مجموعة شباب زيك بالظبط.</p>` },
+            'about': { 
+                title: 'قصة TRUEFIT 🦅 - الحلم اللي بقى حقيقة', 
+                content: `
+                    <div class="space-y-5">
+                        <p class="font-bold text-white text-lg border-r-4 border-white pr-3">"مش مجرد براند ملابس، دي قصة طموح بدأ من الصفر وسط مدرجات الجامعة."</p>
+                        <p>إحنا شباب زيك بالظبط.. كنا بندور دايماً على اللبس اللي يعبر عن شخصيتنا، لبس يجمع بين فخامة أزياء الشارع (Streetwear) وبين الراحة والجودة اللي تعيش معاك. بس للأسف، دايماً كنا بنقف قدام معادلة صعبة: يا إما تصميم حلو بسعر مبالغ فيه، يا إما سعر رخيص بجودة متستحملش غسلتين.</p>
+                        <p>ومن هنا، من وسط الإحباط ده، اتولدت فكرة <strong class="text-white">TRUEFIT</strong>. سألنا نفسنا: "ليه منعملش إحنا البراند اللي بيحقق المعادلة دي؟ ليه منوفرش إطلالة النخبة لكل شاب مصري بأسعار عادلة؟"</p>
+                        <p>بدأنا بخطوات بسيطة وحلم ملوش حدود. لفينا المصانع، اخترنا أفضل وأغلى الخامات بإيدينا، وركزنا في أدق التفاصيل من أول الخياطة لحد التغليف. كان هدفنا الأساسي إنك أول ما تلبس قطعة من عندنا، تحس إنك لابس ثقة، فخامة، وتميز ملوش مثيل.</p>
+                        <p class="font-bold text-white">كل قطعة بنصممها بتعبر عن جزء من شخصيتنا. وكل عميل بيثق فينا، مش مجرد مشتري، ده شريك أساسي في قصة نجاحنا.</p>
+                        <p class="text-center mt-6 text-gray-400 text-xs font-brand tracking-widest border-t border-gray-800 pt-6">TRUEFIT - WHERE ELITE MEETS STREET</p>
+                    </div>` 
+            },
             'returns': { title: 'سياسة الاستبدال والاسترجاع 🔄', content: `<p class="mb-4 font-bold text-white">الاستبدال والاسترجاع متاح بكل سهولة خلال <strong>14 يوم</strong>.</p>` },
-            'shipping': { title: 'سياسة الشحن والتوصيل 🚚', content: `<p class="mb-4 font-bold text-white">بنوصلك بأسرع وقت لجميع محافظات مصر مع الدفع عند الاستلاستلام.</p>` }
+            'shipping': { title: 'سياسة الشحن والتوصيل 🚚', content: `<p class="mb-4 font-bold text-white">بنوصلك بأسرع وقت لجميع محافظات مصر مع الدفع عند الاستلام.</p>` }
         };
 
         const secretPool = [
@@ -306,9 +352,8 @@
         let currentDiscount = 0;
         let appliedCouponName = "";
         let currentProductPrice = 0;
-        let selectedRating = 5;
+        let selectedGlobalRating = 5;
 
-        // قاعدة بيانات التقييمات المخزنة محلياً
         function getReviews() {
             return JSON.parse(localStorage.getItem('truefit_reviews') || JSON.stringify([
                 { name: 'سارة محمود', date: '2026-09-28', rating: 5, text: 'خامة تحفة وفخمة جداً، أنصح به بشدة!' },
@@ -403,6 +448,7 @@
             document.getElementById('info-pages-view').classList.remove('hidden');
         }
 
+        // دالة عرض تفاصيل المنتج مع قسم المراجعات الصغير
         function openModal(id) {
             const product = products.find(p => p.id === id);
             currentProductPrice = product.price;
@@ -417,7 +463,6 @@
             const colorsHTML = product.colors.map(c => `<option value="${c}">${c}</option>`).join('');
             const sizesHTML = product.sizes.map(s => `<option value="${s}">${s}</option>`).join('');
             
-            // جلب آراء العملاء المعروضة بشكل أنيق غير مأخذ مساحة كبيرة
             const reviews = getReviews();
             const reviewsHTML = reviews.map(r => `
                 <div class="bg-black/60 p-3 rounded-xl border border-gray-800 text-xs">
@@ -459,7 +504,6 @@
                     </div>
                 </div>
 
-                <!-- حقل قسيمة الخصم -->
                 <div class="mb-6 bg-zinc-900/80 border border-gray-800 p-3 rounded-2xl">
                     <label class="block text-[11px] text-gray-300 font-bold mb-2">كود القسيمة أو الهدية 🎁</label>
                     <div class="flex gap-2">
@@ -469,15 +513,12 @@
                     <p id="coupon-msg" class="text-[11px] mt-2 hidden"></p>
                 </div>
 
-                <!-- قسم آراء العملاء المرتب والمنسق -->
                 <div class="mb-6 border-t border-gray-800 pt-4">
                     <div class="flex justify-between items-center mb-3">
                         <div class="flex items-center gap-2">
                             <span class="text-sm font-bold text-white">آراء العملاء</span>
                             <span class="text-yellow-500 text-xs">★★★★★</span>
-                            <span class="text-[10px] text-gray-400">(4.8 / 3 تقييمات)</span>
                         </div>
-                        <button onclick="openReviewModal()" class="text-[10px] text-purple-400 hover:underline bg-purple-950/40 border border-purple-800/60 px-3 py-1.5 rounded-full">شارك تقييمك</button>
                     </div>
                     <div class="space-y-2 max-h-40 overflow-y-auto no-scrollbar">
                         ${reviewsHTML}
@@ -493,17 +534,18 @@
             setTimeout(() => modalContent.classList.replace('modal-content-leave', 'modal-content-enter'), 10);
         }
 
-        function openReviewModal() {
-            document.getElementById('review-modal').classList.remove('hidden');
+        // دوال نافذة التقييم العامة المبتكرة
+        function openGlobalReviewModal() {
+            document.getElementById('global-review-modal').classList.remove('hidden');
         }
 
-        function closeReviewModal() {
-            document.getElementById('review-modal').classList.add('hidden');
+        function closeGlobalReviewModal() {
+            document.getElementById('global-review-modal').classList.add('hidden');
         }
 
-        function setRating(stars) {
-            selectedRating = stars;
-            const starElements = document.querySelectorAll('#star-rating-picker span');
+        function setGlobalRating(stars) {
+            selectedGlobalRating = stars;
+            const starElements = document.querySelectorAll('#global-star-picker span');
             starElements.forEach((el, index) => {
                 if(index < stars) {
                     el.style.color = '#eab308'; // أصفر
@@ -513,24 +555,27 @@
             });
         }
 
-        function submitReview() {
-            const name = document.getElementById('reviewer-name').value.trim();
-            const text = document.getElementById('reviewer-comment').value.trim();
+        function submitGlobalReview() {
+            const name = document.getElementById('global-rev-name').value.trim();
+            const text = document.getElementById('global-rev-text').value.trim();
             
             if(!name || !text) {
-                alert("برجاء إدخال الاسم ورأيك في المنتج!");
+                alert("برجاء إدخال الاسم ورأيك في منتجاتنا!");
                 return;
             }
 
             const reviews = getReviews();
             const today = new Date().toISOString().split('T')[0];
-            reviews.unshift({ name, date: today, rating: selectedRating, text });
+            reviews.unshift({ name, date: today, rating: selectedGlobalRating, text });
             localStorage.setItem('truefit_reviews', JSON.stringify(reviews));
 
-            closeReviewModal();
-            alert("شكراً لك! تم إضافة تقييمك بنجاح ⭐");
-            // إعادة فتح نافذة المنتج لتحديث القائمة فوراً
-            openModal(10); 
+            closeGlobalReviewModal();
+            alert("شكراً لك! تم إرسال تقييمك (وصورتك) بنجاح للمراجعة ليتم إضافتها للموقع ⭐📸");
+            
+            // تصفير الحقول
+            document.getElementById('global-rev-name').value = '';
+            document.getElementById('global-rev-text').value = '';
+            setGlobalRating(5);
         }
 
         function applyCoupon() {
